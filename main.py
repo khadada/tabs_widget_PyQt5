@@ -14,4 +14,23 @@ class MainWindow(QMainWindow):
         """
         self.setWindowTitle("Tab_")
         self.setGeometry(40, 40, 600, 800)
+        self.display_content()
+    
+    def display_content(self):
+        """
+        Display widgets of the main screen window
+        """
+        tabs = QTabWidget()
+        tabs.setTabPosition(QTabWidget.West)
+        tabs.setMovable(True)
+        for n , color in enumerate(["red","blue","green","yellow"]):
+            tabs.addTab(Color(color),color)
+        
+        self.setCentralWidget(tabs)
+
+# Run program:
+if __name__ == "__main__":
+    app = QApplication(sys.argv)
+    tab_app = MainWindow()
+    sys.exit(app.exec_())
         
