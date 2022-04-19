@@ -1,4 +1,5 @@
 # import necessary class and modules:
+from re import S
 import sys
 from PyQt5.QtWidgets import(QApplication,QMainWindow,QWidget,QTabWidget)
 from custom_widget_placeholder import Color
@@ -7,6 +8,7 @@ class MainWindow(QMainWindow):
     def __init__(self):
         super().__init__()
         self.initialize_ui()
+        self.show()
         
     def initialize_ui(self):
         """
